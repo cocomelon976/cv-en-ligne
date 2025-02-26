@@ -2,226 +2,191 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
-/* organisation des variables des couleurs demandées */
+/* organisation des variables des couleurs demandées*/
 :root {
-    --bordeaux: #782221;
-    --beige: #dbc2a4;
-    --marron-fonce: #2c1d27;
-    --blanc: #ffffff;
-    --noir: #000000;
+    --bordeaux: #782221; /* couleur bordeaux */
+    --beige: #dbc2a4; /* couleur beige */
+    --marron-fonce: #2c1d27; /* couleur marron foncé */
+    --blanc: #ffffff; /*  couleur blanche */
+    --noir: #000000; /* couleur noire */
 }
 
 /* styles généraux du corps de la page */
 body {
-    background: var(--marron-fonce);
-    color: var(--blanc);
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    padding: 0; /* supprime le padding autour du body */
-    margin: 0; /* enlève la marge par défaut du body */
+    background: var(--marron-fonce); /* fond de la page marron foncé */
+    color: var(--blanc); /* couleur blanche pour le texte*/
+    font-family: 'Raleway', sans-serif; /* police principale */
+    text-align: center; /* alignement du texte au centre */
+    margin: 0; /* supprime le padding autour du body */
+    padding: 0; /* enlève la marge par défaut du body */
     cursor: url('img/lecursorbois-.png') 15 15, auto;
     cursor: url('img/lecursorpointerbois.png') pointer;
 }
 
-/* application de Lato pour les titres */
+/* syles des titres */
 h1, h2, h3 {
-    font-family: 'Lato', sans-serif;
-    color: var(--bordeaux);
+    font-family: 'Lato', sans-serif; /* police lato pour les titres */
+    color: var(--bordeaux); /* couleur bordeaux pour les titres */
 }
 
 /* photo de profil */
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--bordeaux);
-    box-shadow: 0 0 10px rgba(120, 34, 33, 0.7);
-    transition: transform 0.3s ease-in-out;
-    margin-top: 80px; /* Déplace la photo sous la barre fixe */
-    z-index: 5; /* Assure que la photo soit au-dessus des autres éléments */
+    width: 120px; /* taille de l'image de profil */
+    height: 120px; /* taille de l'image de profil */
+    border-radius: 50%; /* arrondit l'image pour un effet circulaire */
+    object-fit: cover; /* ajuste la taille de l'image pour qu'elle couvre la totalité du conteneur */
+    border: 4px solid var(--bordeaux); /* bordure de l'image de profil couleur bordeaux */
+    box-shadow: 0 0 10px rgba(120, 34, 33, 0.7); /* ombre portée sur l'image de profil */
+    transition: transform 0.3s ease-in-out; /* effet de transition pour l'agrandissement de l'image */
+    margin-top: 80px; /* espace entre la photo de profil et le haut de la page */
+    z-index: 5; /* positionne l'image de profil au-dessus des autres éléments */
 }
 
 .profile-pic:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* agrandit l'image de 10% lors du survol */
 }
 
-/* bande de présentation qui traverse toute la largeur de la page */
+/* bande de présentation (header fixe) */
 .presentation {
-    width: 100%;
-    height: 60px; /* hauteur ajustée */
-    background: rgba(255, 255, 255, 0.6); /* fond semi-transparent */
-    backdrop-filter: blur(8px); /* effet de flou */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    color: var(--marron-fonce);
-    font-size: 1.4em;
-    text-align: center;
-    position: fixed; /* position absolue pour qu'elle reste en haut */
-    width: 100%;
-    top: 0; /* s'assurer qu'elle est en haut de la page */
-    left: 0;
-    z-index: 10; /* au-dessus des autres éléments */
+    width: 100%; /* largeur de la bande de présentation */
+    height: 60px; /* hauteur de la bande de présentation */
+    background: rgba(255, 255, 255, 0.6); /* couleur de fond de la bande de présentation */
+    backdrop-filter: blur(8px); /* flou pour la transparence */
+    display: flex; /* affiche les éléments en ligne */
+    justify-content: center; /* centre les éléments horizontalement */
+    align-items: center; /* centre les éléments verticalement */
+    font-family: 'Lato', sans-serif; /* police lato pour la bande de présentation */
+    color: var(--marron-fonce); /* couleur marron foncé pour le texte */
+    font-size: 1.4em; /* taille de la police */
+    text-align: center; /* alignement du texte au centre */
+    position: fixed; /* position fixe pour la bande de présentation */
+    top: 0; /* positionne la bande de présentation en haut de la page */
+    left: 0; /* positionne la bande de présentation à gauche de la page */
+    z-index: 10; /* positionne la bande de présentation au-dessus des autres éléments */
 }
 
-/* main (grille générale de mise en page) */
+/* mise en page principale (grille) */
 main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    gap: 20px;
-    max-width: 1160px; /* largeur maximale pour centrer le contenu */
-    margin: 0 auto; /* centrer le main sur la page */
-    padding-top: 80px; /* ajuster selon la hauteur de la bande */
+    display: grid; /* affiche les éléments en grille */
+    grid-template-columns: repeat(2, 1fr); /* crée 2 colonnes de largeur égale */
+    gap: 20px; /* espace entre les éléments de la grille */
+    max-width: 1160px; /* largeur maximale de la grille */
+    margin: 0 auto; /* centre la grille horizontalement */
+    padding-top: 80px; /* espace entre la grille et la bande de présentation */
 }
 
-/* section contact ajustée */
+/* section contact */
 #contact {
-    margin-top: 80px; /* décale la section contact sous la bande */
-    padding: 20px;
-    background-color: var(--beige);
-    color: var(--noir);
-    border-radius: 10px;
-    box-sizing: border-box;
-    width: 100%;
+    margin-top: 80px; /* espace entre la section contact et la bande de présentation */
+    padding: 20px; /* espace intérieur de la section contact */
+    background-color: var(--beige); /* couleur beige pour la section contact */
+    color: var(--noir); /* couleur noire pour le texte */
+    border-radius: 10px; /* arrondit les coins de la section contact */
+    box-sizing: border-box; /* inclut les bordures dans la largeur et la hauteur */
 }
 
-/* curseur personnalisé pour les éléments spécifiques */
-.contact-info a {
-    cursor: url('img/lecursorpointerbois.png') 10 10, pointer;
+/* curseur personnalisé pour les liens */
+.contact-info a:hover, .social-icons img:hover { /* définition de l'effet de survol pour les liens */
+    cursor: url('img/lecursorpointerbois.png') 10 10, pointer; /* curseur personnalisé pour les liens */
 }
 
-/* icônes dans la section contact */
-.contact-info {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 10px;
-    margin-bottom: 15px; /* espacement entre les éléments de contact */
+/* icônes de contact */
+.contact-info { /* définition des propriétés de la section contact */
+    display: flex; /* affiche les éléments en ligne */
+    align-items: center; /* centre les éléments verticalement */
+    justify-content: left; /* aligne les éléments à gauche */
+    gap: 10px; /* espace entre les éléments */
+    margin-bottom: 15px; /* espace en bas de la section contact */
 }
 
-.contact-info img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    object-fit: cover;
+.contact-info img { /* définition des propriétés de base des images de contact */
+    width: 25px; /* largeur de l'image */
+    height: 25px; /* hauteur de l'image */
+    border-radius: 50%; /* arrondit l'image pour un effet circulaire */
+    object-fit: cover; /* ajuste la taille de l'image pour qu'elle couvre la totalité du conteneur */
 }
 
 /* icônes des réseaux sociaux */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+.social-icons { /* définition des propriétés de la section des icônes sociales */
+    display: flex; /* affiche les éléments en ligne */
+    justify-content: center; /* centre les éléments horizontalement */
+    gap: 15px; /* espace entre les éléments */
+    margin-top: 10px; /* espace en haut de la section des icônes sociales */
 }
 
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+/* définition des propriétés de base des images dans les icônes sociales */
+.social-icons img { /* définition des propriétés de base des images des icônes sociales */
+    width: 40px; /* largeur de l'image */
+    height: 40px; /* hauteur de l'image */
+    /* définition de la transition pour les effets d'opacité et de transformation */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* effet de transition pour les icônes sociales */
 }
 
-.social-icons img:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
+/* définition des effets appliqués lors du survol (hover) des icônes sociales */
+.social-icons img:hover { /* définition des effets appliqués lors du survol des icônes sociales */
+    opacity: 0.7; /* réduit l'opacité de l'image à 70% lors du survol */
+    transform: scale(1.1); /* agrandit l'image de 10% lors du survol */
 }
 
-/* sections générales (compétences, loisirs, etc.) */
+/* sections générales */
 section {
-    margin: 50px 0;
-    padding: 20px;
-    background-color: var(--beige);
-    color: var(--noir);
-    border-radius: 10px;
-    text-align: left;
+    margin: 50px 0; /* espace autour des sections */
+    padding: 20px; /* espace intérieur des sections */
+    background-color: var(--beige); /* couleur beige pour les sections */
+    color: var(--noir); /* couleur noire pour le texte */
+    border-radius: 10px; /* arrondit les coins des sections */
+    text-align: left; /* alignement du texte à gauche */
 }
 
-/* effet quinconce léger pour certaines sections */
-section:nth-child(odd) {
-    transform: translateY(15px);
+/* effet quinconce pour les sections impaires */
+section:nth-child(odd) { /* définition de l'effet quinconce pour les sections impaires */
+    transform: translateY(15px); /* décale les sections impaires de 15px vers le bas */
 }
 
-/* section Loisirs */
-#loisirs {
-    grid-column: span 1; /* prend la largeur d'une colonne */
-    text-align: center;
+/* section loisirs */
+#loisirs { 
+    grid-column: span 1; /* occupe une colonne sur deux */
+    text-align: left; /* alignement du texte à gauche */
 }
 
-/* 📌 responsive - adaptation aux écrans plus petits */
-@media screen and (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr; /* une seule colonne */
+/* responsive pour petits écrans */
+@media screen and (max-width: 768px) { /* définition des styles pour les écrans de petite taille */
+    main { /* ajustements de la grille principale */
+        grid-template-columns: 1fr; /* affiche une seule colonne pour les écrans de petite taille */
     }
 
     section {
-        width: 90%;
-        text-align: left;
-        transform: none;
+        width: 90%; /* largeur des sections */
+        margin-left: auto; /* centre les sections horizontalement */
+        margin-right: auto; /* centre les sections horizontalement */
+        text-align: left; /* alignement du texte à gauche */
+        transform: none; /* annule l'effet quinconce */
     }
 
     /* section des langues */
-        #langues {
-            margin: 50px 0;
-            padding: 20px;
-            background-color: var(--beige);
-            color: var(--noir);
-            border-radius: 10px;
-            text-align: left;
-            /* largeur ajustée pour qu'il s'aligne avec les autres sections */
-            width: 100%; /* ou tu peux laisser une largeur fixe si tu préfères */
-        }
-
-    /* 📌 responsive - adaptation aux écrans plus petits */
-    @media screen and (max-width: 768px) {
-        #langues {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    #langues {
+        width: 90%; /* largeur de la section des langues */
+        margin-left: auto; /* centre la section horizontalement */
+        margin-right: auto; /* centre la section horizontalement */
     }
 
-
+    /* ajustements de la photo de profil */
     .profile-pic {
         margin-top: 100px; /* ajoute un peu d'espace sous la barre fixe sur mobile */
     }
 
+    /* taille des icônes sur mobile */
     .social-icons img {
-        width: 35px;
-        height: 35px;
+        width: 35px; /* largeur: 35px */
+        height: 35px; /* hauteur: 35px */
     }
+}
 
-    /* curseur personnalisé pour les icônes */
-    .social-icons img:hover,
-    .contact-info a:hover {
-        cursor: url('img/lecursorpointerbois.png') 10 10, pointer;
-    }
-
-
-    /* Footer */
-    footer {
-        background-color: transparent; /* Supprime l'arrière-plan */
-        color: var(--noir); /* Garde la couleur du texte */
-        padding: 20px;
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    footer p {
-        font-family: 'Raleway', sans-serif;
-        margin: 5px 0;
-    }
-
-    /* Date de mise à jour */
-    footer p:first-child {
-        font-size: 0.9em;
-        color: var(--blanc);
-    }
-
-    /* Copyright */
-    footer p:last-child {
-        font-size: 1em;
-        color: var(--blanc);
-    }
-    
+/* footer */
+footer {
+    background-color: transparent; /* couleur de fond transparente */
+    color: var(--noir); /* couleur noire pour le texte */
+    padding: 20px; /* espace intérieur du footer */
+    text-align: center; /* alignement du texte au centre */
+    margin-top: 40px; /* espace en haut du footer */
 }
