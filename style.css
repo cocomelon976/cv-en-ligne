@@ -1,0 +1,192 @@
+/* importation des polices demandées */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+/* organisation des variables des couleurs demandées */
+:root {
+    --bordeaux: #782221;
+    --beige: #dbc2a4;
+    --marron-fonce: #2c1d27;
+    --blanc: #ffffff;
+    --noir: #000000;
+}
+
+/* styles généraux du corps de la page */
+body {
+    background: var(--marron-fonce);
+    color: var(--blanc);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 0; /* supprime le padding autour du body */
+    margin: 0; /* enlève la marge par défaut du body */
+    cursor: url('img/lecursorbois.png') 15 15, auto;
+}
+
+/* application de Lato pour les titres */
+h1, h2, h3 {
+    font-family: 'Lato', sans-serif;
+    color: var(--bordeaux);
+}
+
+/* photo de profil */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bordeaux);
+    box-shadow: 0 0 10px rgba(120, 34, 33, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* main (grille générale de mise en page) */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 20px;
+    max-width: 1160px; /* largeur maximale pour centrer le contenu */
+    margin: 0 auto; /* centrer le main sur la page */
+    padding-top: 80px; /* ajuste selon la hauteur de la bande */
+}
+
+/* bande de présentation qui traverse toute la largeur de la page */
+.presentation {
+    width: 100%;
+    height: 60px; /* hauteur ajustée */
+    background: rgba(255, 255, 255, 0.6); /* fond semi-transparent */
+    backdrop-filter: blur(8px); /* effet de flou */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    color: var(--marron-fonce);
+    font-size: 1.4em;
+    text-align: center;
+    position: fixed; /* position absolue pour qu'elle reste en haut */
+    width: 100%;
+    top: 0; /* s'assurer qu'elle est en haut de la page */
+    left: 0;
+    z-index: 10; /* au-dessus des autres éléments */
+}
+
+/* section contact ajustée */
+#contact {
+    margin-top: 80px; /* décale la section contact sous la bande */
+    padding: 20px;
+    background-color: var(--beige);
+    color: var(--noir);
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* curseur personnalisé pour les éléments spécifiques */
+.contact-info a {
+    cursor: url('img/lecursorpointerbois.png') 10 10, pointer;
+}
+
+/* icônes dans la section contact */
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 15px; /* espacement entre les éléments de contact*/
+
+}
+
+.contact-info img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* icônes des réseaux sociaux */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+/* sections générales (compétences, loisirs, etc.) */
+section {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: var(--beige);
+    color: var(--noir);
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* effet quinconce léger pour certaines sections */
+section:nth-child(odd) {
+    transform: translateY(15px);
+}
+
+/* section Loisirs */
+#loisirs {
+    grid-column: span 2; /* prend toute la largeur de la grille */
+    text-align: center;
+}
+
+/* 📌 responsive - adaptation aux écrans plus petits */
+@media screen and (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* une seule colonne */
+    }
+
+    section {
+        width: 90%;
+        text-align: left;
+        transform: none;
+    }
+
+    /* section des langues */
+    #langues {
+        margin: 30px 0; /* espacement vertical */
+        padding: 20px;
+        background-color: var(--beige);
+        color: var(--noir);
+        border-radius: 10px;
+        text-align: left;
+        width: 300px; /* largeur fixe pour éviter qu'il soit trop large */
+        margin-left: auto; /* marge automatique à gauche */
+        margin-right: auto; /* marge automatique à droite */
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--bordeaux);
+        box-shadow: 0 0 10px rgba(120, 34, 33, 0.7);
+        transition: transform 0.3s ease-in-out;
+        margin-top: 80px; /* ajoute cette ligne pour décaler la photo vers le bas */
+    }    
+
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+
+}
